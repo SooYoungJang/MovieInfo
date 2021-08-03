@@ -6,7 +6,7 @@ import com.example.movieinfo.domain.repository.MovieRepository
 
 class GetMovieListUseCase(private val movieRepository: MovieRepository) {
 
-    suspend fun execute() : Resource<NaverMovieApiResponse> {
-        return movieRepository.getMovieLists()
+    suspend fun execute(query: String, country: String) : Resource<NaverMovieApiResponse> {
+        return movieRepository.getMovieLists(country, query)
     }
 }

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface MovieRepository {
 
-    suspend fun getMovieLists() : Resource<NaverMovieApiResponse>
+    suspend fun getMovieLists(country : String, query: String) : Resource<NaverMovieApiResponse>
     suspend fun getSearchMovieLists(searchQuery: String) : Resource<NaverMovieApiResponse>
     suspend fun deleteMovieLists(movieItem: MovieItem)
     suspend fun saveMovieLists(movieItem: MovieItem)
