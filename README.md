@@ -7,7 +7,7 @@
 ## 구성 :
 ### Language : Kotlin
 ### DI : Hilt
-### AAC(Clean, MVVM, DataBinding, LiveData, Room, Navigation, Paging)
+### AAC(Clean, MVVM, DataBinding, LiveData, Room, Navigation, //Paging)
 ### Opensource: Retrofit, Glide
 ### asynchronous processing : coroutines
 ### Test : Unit Test(JUnit4)
