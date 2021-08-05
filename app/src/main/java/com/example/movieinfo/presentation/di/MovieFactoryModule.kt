@@ -1,6 +1,7 @@
 package com.example.movieinfo.presentation.di
 
 import com.example.movieinfo.domain.usecase.GetMovieListUseCase
+import com.example.movieinfo.domain.usecase.SaveMovieListUseCase
 import com.example.movieinfo.presentation.viewmodelfactory.MovieViewModelFactory
 import dagger.Module
 import dagger.Provides
@@ -14,7 +15,10 @@ class MovieFactoryModule {
 
     @Singleton
     @Provides
-    fun provideViewModelFactory(getMovieListUseCase: GetMovieListUseCase) : MovieViewModelFactory {
-        return MovieViewModelFactory(getMovieListUseCase)
+    fun provideViewModelFactory(
+        getMovieListUseCase: GetMovieListUseCase,
+        saveMovieListUseCase: SaveMovieListUseCase
+    ): MovieViewModelFactory {
+        return MovieViewModelFactory(getMovieListUseCase, saveMovieListUseCase)
     }
 }

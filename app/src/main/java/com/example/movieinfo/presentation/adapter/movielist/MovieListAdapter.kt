@@ -1,5 +1,6 @@
-package com.example.movieinfo.presentation.adapter
+package com.example.movieinfo.presentation.adapter.movielist
 
+import android.graphics.Movie
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieinfo.data.model.MovieItem
 import com.example.movieinfo.databinding.MovieListItemBinding
 
-class MovieListAdapter : RecyclerView.Adapter<MovieListViewHolder>() {
+class MovieListAdapter(private val onClick: (MovieItem?, Int) -> Unit) : RecyclerView.Adapter<MovieListViewHolder>() {
 
     val callback = object : DiffUtil.ItemCallback<MovieItem>(){
         override fun areItemsTheSame(oldItem: MovieItem, newItem: MovieItem): Boolean {
@@ -25,7 +26,7 @@ class MovieListAdapter : RecyclerView.Adapter<MovieListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListViewHolder {
         val binding = MovieListItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
-        return MovieListViewHolder(binding)
+        return MovieListViewHolder(binding,onClick)
     }
 
     override fun onBindViewHolder(holder: MovieListViewHolder, position: Int) {

@@ -2,16 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".presentation.view.UserLikeMovieInfoFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_like_rcv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="user like movie info fragment" />
-
-    </FrameLayout>
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </layout>

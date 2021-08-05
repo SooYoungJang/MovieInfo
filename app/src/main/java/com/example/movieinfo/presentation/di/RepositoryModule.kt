@@ -1,6 +1,7 @@
 package com.example.movieinfo.presentation.di
 
 import com.example.movieinfo.data.repository.MovieRepositoryImpl
+import com.example.movieinfo.data.repository.datasource.MovieLocalDataSource
 import com.example.movieinfo.data.repository.datasource.MovieRemoteDataSource
 import com.example.movieinfo.domain.repository.MovieRepository
 import dagger.Module
@@ -15,7 +16,10 @@ class RepositoryModule {
 
     @Singleton
     @Provides
-    fun provideNewsRepositoryDataSource(movieRemoteDataSource: MovieRemoteDataSource) : MovieRepository {
-        return MovieRepositoryImpl(movieRemoteDataSource)
+    fun provideNewsRepositoryDataSource(
+        movieRemoteDataSource: MovieRemoteDataSource,
+        movieLocalDataSource: MovieLocalDataSource
+    ): MovieRepository {
+        return MovieRepositoryImpl(movieRemoteDataSource, movieLocalDataSource)
     }
 }
